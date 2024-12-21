@@ -1,13 +1,16 @@
 // export const Person = ({ person }) => ();
-export const Person = ({ props }) => {
-  const sex = props.sex === 'f' ? 'husband' : 'wife';
+export const Person = ({ person }) => {
+  const { name, age, partnerName, sex, isMarried } = person;
+
+  const personSex = sex === 'm' ? 'wife' : 'husband';
+
   return (
     <section>
-      <h2> My name is {props.name} </h2>
-      <p>{props.age ? `I am ${props.age}` : ''}</p>
+      <h2> My name is {name} </h2>
+      <p>{age ? `I am ${age}` : ''}</p>
       <p>
-        {props.isMarried === true
-          ? `${props.partnerName} is my ${sex}`
+        {isMarried === true
+          ? `${partnerName} is my ${personSex}`
           : `I am not married`}
       </p>
     </section>
